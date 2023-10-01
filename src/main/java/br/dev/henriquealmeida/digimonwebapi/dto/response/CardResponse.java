@@ -11,5 +11,6 @@ public record CardResponse(
         String attribute,
         String cardNumber,
         String imageUrl,
-        List<String> cardSets) {
+        List<String> cardSets
+) {
 }

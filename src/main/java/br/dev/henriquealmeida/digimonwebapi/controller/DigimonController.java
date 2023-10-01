@@ -13,12 +13,18 @@ import reactor.core.publisher.Mono;
 @RequestMapping("/digimon")
 public class DigimonController {
 
-    DigimonClientService digimonClientService;
+    private DigimonClientService digimonClientService;
 
-    @GetMapping
+    @GetMapping("/name/{name}")
     @ResponseStatus(HttpStatus.OK)
-    public Flux<DigimonResponse> getDigimonByName(@RequestParam String name) {
+    public Mono<DigimonResponse> getDigimonByName(@PathVariable String name) {
         return digimonClientService.findDigimonByName(name);
+    }
+
+    @GetMapping("/level/{level}")
+    @ResponseStatus(HttpStatus.OK)
+    public Flux<DigimonResponse> getDigimonsByLevel(@PathVariable String level) {
+        return digimonClientService.findDigimonsByLevel(level);
     }
 
 
