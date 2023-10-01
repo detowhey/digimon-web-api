@@ -31,7 +31,8 @@ public class DigimonClientService {
                 .onStatus(HttpStatusCode::is4xxClientError,
                         error -> Mono.error(new RuntimeException("Check the given parameter: " + name)))
                 .bodyToFlux(DigimonResponse.class)
-                .next().log();
+                .next()
+                .log();
     }
 
     public Flux<DigimonResponse> findDigimonsByLevel(String level) {

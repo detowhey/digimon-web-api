@@ -1,8 +1,10 @@
 package br.dev.henriquealmeida.digimonwebapi.enu;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 
 @Getter
+@Schema(name = "Level", description = "The levels that exist for digimon")
 public enum Level {
     FRESH("fresh"),
     ROOKIE("rookie"),
