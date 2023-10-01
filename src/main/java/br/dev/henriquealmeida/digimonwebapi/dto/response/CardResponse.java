@@ -2,15 +2,14 @@ package br.dev.henriquealmeida.digimonwebapi.dto.response;
 
 import java.util.List;
 
-public class CardResponse {
-
-    private String name;
-    private String type;
-    private String color;
-    private String state;
-    private String digiType;
-    private String attribute;
-    private String cardNumber;
-    private String imageUrl;
-    private List<String> cardSets;
+public record CardResponse(
+        String name,
+        String type,
+        String color,
+        String state,
+        String digiType,
+        String attribute,
+        String cardNumber,
+        String imageUrl,
+        List<String> cardSets) {
 }
