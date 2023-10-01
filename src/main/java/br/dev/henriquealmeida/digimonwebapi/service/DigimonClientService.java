@@ -1,6 +1,7 @@
 package br.dev.henriquealmeida.digimonwebapi.service;
 
 import br.dev.henriquealmeida.digimonwebapi.dto.response.DigimonResponse;
+import br.dev.henriquealmeida.digimonwebapi.exception.InvalidDigimonLevelException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.MediaType;
@@ -36,13 +37,22 @@ public class DigimonClientService {
     public Flux<DigimonResponse> findDigimonsByLevel(String level) {
         log.info("Searching for digimon with name [{}]", level);
 
-        return webClient
-                .get()
-                .uri("level/" + level)
-                .accept(MediaType.APPLICATION_JSON)
-                .retrieve()
-                .onStatus(HttpStatusCode::is4xxClientError,
-                        error -> Mono.error(new RuntimeException("Check the level parameter")))
-                .bodyToFlux(DigimonResponse.class).log();
+        try {
+            return webClient
+                    .get()
+                    .uri("level/" + level)
+                    .accept(MediaType.APPLICATION_JSON)
+                    .retrieve()
+                    .onStatus(HttpStatusCode::is4xxClientError,
+                            error -> Mono.error(new InvalidDigimonLevelException("Check the level parameter: " + level))
+                    )
+                    .bodyToFlux(DigimonResponse.class)
+                    .log();
+        } catch (InvalidDigimonLevelException e) {
+            throw new InvalidDigimonLevelException("Check the level parameter: ");
+        }
+
+
+
     }
 }

@@ -2,6 +2,7 @@ package br.dev.henriquealmeida.digimonwebapi.controller;
 
 import br.dev.henriquealmeida.digimonwebapi.dto.response.CardResponse;
 import br.dev.henriquealmeida.digimonwebapi.dto.response.DigimonResponse;
+import br.dev.henriquealmeida.digimonwebapi.enu.Level;
 import br.dev.henriquealmeida.digimonwebapi.service.CardDigimonClientService;
 import br.dev.henriquealmeida.digimonwebapi.service.DigimonClientService;
 import lombok.AllArgsConstructor;
@@ -26,8 +27,8 @@ public class DigimonController {
 
     @GetMapping("/level/{level}")
     @ResponseStatus(HttpStatus.OK)
-    public Flux<DigimonResponse> getDigimonsByLevel(@PathVariable String level) {
-        return digimonClientService.findDigimonsByLevel(level);
+    public Flux<DigimonResponse> getDigimonsByLevel(@PathVariable Level level) {
+        return digimonClientService.findDigimonsByLevel(level.getLevel());
     }
 
     @GetMapping("/card")
