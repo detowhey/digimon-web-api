@@ -9,7 +9,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 public record DigimonResponse(
         @Schema(description = "Digimon name", example = "Agumon")
         String name,
-        @Schema(description = "Digimon  level", example = "Rookie", implementation = Level.class)
+        @Schema(description = "Digimon level", example = "Rookie", implementation = Level.class)
         String level,
         @Schema(description = "Digimon image url", example = "https://digimon.shadowsmith.com/img/agumon.jpg")
         @JsonProperty(value = "img")

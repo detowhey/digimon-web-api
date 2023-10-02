@@ -36,7 +36,7 @@ public class DigimonClientService {
     }
 
     public Flux<DigimonResponse> findDigimonsByLevel(String level) {
-        log.info("Searching for digimon with name [{}]", level);
+        log.info("Searching for digimons with level [{}]", level);
 
         try {
             return webClient

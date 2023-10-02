@@ -21,6 +21,8 @@ public class CardDigimonClientService {
     }
 
     public Flux<CardResponse> findCardByName(String cardName) {
+        log.info("Search digimon card by [{}]", cardName);
+
         return webClient
                 .get()
                 .uri("search.php?n=" + cardName)

@@ -2,6 +2,7 @@ package br.dev.henriquealmeida.digimonwebapi.exception.handler;
 
 import br.dev.henriquealmeida.digimonwebapi.exception.InvalidDigimonLevelException;
 import br.dev.henriquealmeida.digimonwebapi.exception.error.StandardErrorResponse;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.server.ServletServerHttpRequest;
@@ -11,6 +12,7 @@ import org.springframework.web.reactive.result.method.annotation.ResponseEntityE
 
 import java.time.Instant;
 
+@Slf4j
 @RestControllerAdvice
 public class ResourceExceptionHandler extends ResponseEntityExceptionHandler {
 
@@ -27,6 +29,7 @@ public class ResourceExceptionHandler extends ResponseEntityExceptionHandler {
                 exception.getMessage(),
                 request.getURI().toString()
         );
+        log.error(error, exception.getCause());
         return ResponseEntity.status(httpStatus).body(errorResponse);
     }
 }
