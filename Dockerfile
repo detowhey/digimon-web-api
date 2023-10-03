@@ -1,4 +1,4 @@
-FROM openjdk:17 AS build
+FROM eclipse-temurin:20-jdk AS build
 COPY . /app
 WORKDIR /app
 RUN ./gradlew bootJar
