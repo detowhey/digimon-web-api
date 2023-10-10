@@ -1,4 +1,4 @@
-<img src= "https://i.pinimg.com/originals/ca/5b/a7/ca5ba7d121989a03a9e22518a3ccaab1.png" alt="Digimon logo, digital monsters" style="display: block; margin: 0 auto" width="50%" height="50%">
+<img src= "https://i.pinimg.com/originals/ca/5b/a7/ca5ba7d121989a03a9e22518a3ccaab1.png" alt="Digimon logo, digital monsters" style="display: block; margin-left:auto; margin-right:auto;" width="50%" height="50%">
 
 # Digimon Web API
 
