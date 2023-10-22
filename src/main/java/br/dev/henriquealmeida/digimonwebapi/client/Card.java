@@ -1,4 +1,4 @@
-package br.dev.henriquealmeida.digimonwebapi.dto.response.client;
+package br.dev.henriquealmeida.digimonwebapi.client;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.v3.oas.annotations.Hidden;

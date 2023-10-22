@@ -1,4 +1,4 @@
-package br.dev.henriquealmeida.digimonwebapi.swagger;
+package br.dev.henriquealmeida.digimonwebapi.configuration;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;

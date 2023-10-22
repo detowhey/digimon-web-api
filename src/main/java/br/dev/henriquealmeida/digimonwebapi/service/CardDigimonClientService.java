@@ -1,7 +1,7 @@
 package br.dev.henriquealmeida.digimonwebapi.service;
 
 import br.dev.henriquealmeida.digimonwebapi.dto.response.CardResponse;
-import br.dev.henriquealmeida.digimonwebapi.dto.response.client.Card;
+import br.dev.henriquealmeida.digimonwebapi.client.Card;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.MediaType;

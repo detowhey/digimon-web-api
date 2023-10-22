@@ -1,4 +1,4 @@
-package br.dev.henriquealmeida.digimonwebapi.enu;
+package br.dev.henriquealmeida.digimonwebapi.dto.enu;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;

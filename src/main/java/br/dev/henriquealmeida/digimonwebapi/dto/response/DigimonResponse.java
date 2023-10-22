@@ -1,6 +1,6 @@
 package br.dev.henriquealmeida.digimonwebapi.dto.response;
 
-import br.dev.henriquealmeida.digimonwebapi.enu.Level;
+import br.dev.henriquealmeida.digimonwebapi.dto.enu.Level;
 import com.fasterxml.jackson.annotation.*;
 import io.swagger.v3.oas.annotations.media.Schema;
 

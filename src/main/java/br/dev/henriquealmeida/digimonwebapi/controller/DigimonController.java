@@ -2,7 +2,7 @@ package br.dev.henriquealmeida.digimonwebapi.controller;
 
 import br.dev.henriquealmeida.digimonwebapi.dto.response.CardResponse;
 import br.dev.henriquealmeida.digimonwebapi.dto.response.DigimonResponse;
-import br.dev.henriquealmeida.digimonwebapi.enu.Level;
+import br.dev.henriquealmeida.digimonwebapi.dto.enu.Level;
 import br.dev.henriquealmeida.digimonwebapi.service.CardDigimonClientService;
 import br.dev.henriquealmeida.digimonwebapi.service.DigimonClientService;
 import io.swagger.v3.oas.annotations.Operation;
