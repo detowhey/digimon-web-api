@@ -3,6 +3,7 @@ package br.dev.henriquealmeida.digimonwebapi.service;
 import br.dev.henriquealmeida.digimonwebapi.dto.response.DigimonResponse;
 import br.dev.henriquealmeida.digimonwebapi.exception.InvalidDigimonLevelException;
 import br.dev.henriquealmeida.digimonwebapi.exception.InvalidDigimonNameException;
+import br.dev.henriquealmeida.digimonwebapi.util.Constant;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.MediaType;
@@ -18,7 +19,7 @@ public class DigimonClientService {
     private final WebClient webClient;
 
     public DigimonClientService(WebClient.Builder builder) {
-        this.webClient = builder.baseUrl("https://digimon-api.vercel.app/api/digimon/").build();
+        this.webClient = builder.baseUrl(Constant.DIGIMON_DATA_URL).build();
     }
 
     public Mono<DigimonResponse> findDigimonByName(String name) {

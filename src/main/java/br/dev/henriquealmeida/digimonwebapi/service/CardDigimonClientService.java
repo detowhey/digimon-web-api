@@ -3,6 +3,7 @@ package br.dev.henriquealmeida.digimonwebapi.service;
 import br.dev.henriquealmeida.digimonwebapi.dto.response.CardResponse;
 import br.dev.henriquealmeida.digimonwebapi.client.Card;
 import br.dev.henriquealmeida.digimonwebapi.exception.InvalidDigimonNameException;
+import br.dev.henriquealmeida.digimonwebapi.util.Constant;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.MediaType;
@@ -18,7 +19,7 @@ public class CardDigimonClientService {
     private final WebClient webClient;
 
     public CardDigimonClientService(WebClient.Builder builder) {
-        this.webClient = builder.baseUrl("https://digimoncard.io/api-public/").build();
+        this.webClient = builder.baseUrl(Constant.DIGIMON_CARD_URL).build();
     }
 
     public Flux<CardResponse> findCardByName(String cardName) {
