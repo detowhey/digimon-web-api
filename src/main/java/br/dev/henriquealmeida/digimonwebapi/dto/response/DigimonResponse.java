@@ -13,5 +13,6 @@ public record DigimonResponse(
         String level,
         @Schema(description = "Digimon image url", example = "https://digimon.shadowsmith.com/img/agumon.jpg")
         @JsonProperty(value = "img")
-        String imageUrl) {
+        String imageUrl
+) {
 }
