@@ -22,8 +22,13 @@ import reactor.core.publisher.Mono;
 @RequestMapping(value = "/digimon", produces = {MediaType.APPLICATION_JSON_VALUE})
 public class DigimonController {
 
-    private DigimonClientService digimonClientService;
-    private CardDigimonClientService cardDigimonClientService;
+    private final DigimonClientService digimonClientService;
+    private final CardDigimonClientService cardDigimonClientService;
+
+    public DigimonController(DigimonClientService digimonClientService, CardDigimonClientService cardDigimonClientService) {
+        this.digimonClientService = digimonClientService;
+        this.cardDigimonClientService = cardDigimonClientService;
+    }
 
     @Operation(
             summary = "Search a digimon by name",
